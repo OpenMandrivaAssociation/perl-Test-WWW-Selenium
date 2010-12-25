@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    Test applications using Selenium Remote Control
 License:    GPL+ or Artistic
@@ -13,6 +13,7 @@ Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstre
 
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(LWP::UserAgent)
+BuildRequires: perl-libwww-perl
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::Mock::LWP)
 BuildRequires: perl(Test::More)
