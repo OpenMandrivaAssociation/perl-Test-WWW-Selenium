@@ -1,9 +1,9 @@
 %define upstream_name    Test-WWW-Selenium
-%define upstream_version 1.23
+%define upstream_version 1.24
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Test applications using Selenium Remote Control
 License:    GPL+ or Artistic
