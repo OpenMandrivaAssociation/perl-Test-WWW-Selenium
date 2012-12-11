@@ -1,26 +1,26 @@
 %define upstream_name    Test-WWW-Selenium
 %define upstream_version 1.25
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:    Test applications using Selenium Remote Control
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Test applications using Selenium Remote Control
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(ExtUtils::MakeMaker)
-BuildRequires: perl(LWP::UserAgent)
-BuildRequires: perl-libwww-perl
-BuildRequires: perl(Test::Exception)
-BuildRequires: perl(Test::Mock::LWP)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(Test::Pod)
-BuildRequires: perl(URI::Escape)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(LWP::UserAgent)
+BuildRequires:	perl-libwww-perl
+BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Test::Mock::LWP)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Test::Pod)
+BuildRequires:	perl(URI::Escape)
+BuildArch:	noarch
 
 %description
 Selenium Remote Control (SRC) is a test tool that allows you to write
@@ -41,24 +41,35 @@ can automatically control any supported browser.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Mon May 09 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.250.0-1mdv2011.0
++ Revision: 672878
+- update to new version 1.25
+
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 1.240.0-2
++ Revision: 657849
+- rebuild for updated spec-helper
+
+* Tue Feb 08 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.240.0-1
++ Revision: 636803
+- update to new version 1.24
+
+* Sat Dec 25 2010 Shlomi Fish <shlomif@mandriva.org> 1.230.0-2mdv2011.0
++ Revision: 624834
+- Add libwww-perl to the dependencies explicitly
+- import perl-Test-WWW-Selenium
 
