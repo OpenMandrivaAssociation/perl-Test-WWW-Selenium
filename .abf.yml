@@ -1,2 +1,4 @@
+removed_sources:
+  Test-WWW-Selenium-1.25.tar.gz: be4609cb75a9cdc6e764c5165f2ca5db908d71ae
 sources:
-  "Test-WWW-Selenium-1.25.tar.gz": be4609cb75a9cdc6e764c5165f2ca5db908d71ae
+  Test-WWW-Selenium-1.36.tar.gz: 8617b25973f714ac8c8edafd6aa89732bf5ed3dd
