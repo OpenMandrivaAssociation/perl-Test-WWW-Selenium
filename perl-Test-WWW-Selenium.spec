@@ -2,14 +2,14 @@
 %define upstream_version 1.36
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	4
 
 Summary:	Test applications using Selenium Remote Control
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Test/Test-WWW-Selenium-%{upstream_version}.tar.gz
+Url:		https://github.com/lukec/cpan-selenium-rc-perl
+Source0:	https://cpan.metacpan.org/authors/id/M/MA/MATTP/Test-WWW-Selenium-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
