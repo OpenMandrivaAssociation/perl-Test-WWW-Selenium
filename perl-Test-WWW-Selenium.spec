@@ -1,15 +1,13 @@
 %define upstream_name    Test-WWW-Selenium
-%define upstream_version 1.36
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	4
+Version:	1.36
+Release:	5
 
 Summary:	Test applications using Selenium Remote Control
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/lukec/cpan-selenium-rc-perl
-Source0:	https://cpan.metacpan.org/authors/id/M/MA/MATTP/Test-WWW-Selenium-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/MA/MATTP/Test-WWW-Selenium-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -39,7 +37,7 @@ GET/POST requests. Using this module together with the Selenium Server, you
 can automatically control any supported browser.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
